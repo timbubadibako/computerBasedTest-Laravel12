@@ -93,17 +93,6 @@
             </div>
         </div>
     </div>
-
-    @if ($errors->any())
-        <div class="p-4 mb-4 text-red-800 bg-red-100 rounded">
-            <ul class="ml-4 list-disc">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
     <script>
         function showTab(tabName) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.add('hidden'));
