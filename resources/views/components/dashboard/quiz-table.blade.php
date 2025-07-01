@@ -47,7 +47,7 @@
                         </a>
 
                         {{-- Soft Delete --}}
-                        <form action="{{ route('quizzes.destroy', $quiz->id) }}" method="POST" onsubmit="return confirm('Pindahkan ke Trash?')" style="display:inline;">
+                        <form action="{{ route('admin.quizzes.destroy', $quiz->id) }}" method="POST" onsubmit="return confirm('Pindahkan ke Trash?')" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-600 hover:text-red-900" title="Hapus">

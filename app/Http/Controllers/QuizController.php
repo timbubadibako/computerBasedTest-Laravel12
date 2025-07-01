@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use App\Models\Question;
 use App\Models\QuizAnswer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
@@ -18,8 +19,10 @@ class QuizController extends Controller
         $trashedQuizzes = Quiz::onlyTrashed()->latest()->get();
          // Kita gunakan variabel $quizzes yang sudah ada untuk jumlah kuis aktif
         $totalActiveQuizzes = $quizzes->count();
+        //menghitung jumlah user yang terdaftar
+        $totalUsers = User::count(); // Jika ada model User yang digunakan
 
-        return view('admin.dashboard', compact('quizzes', 'trashedQuizzes', 'totalActiveQuizzes'));
+        return view('admin.dashboard', compact('quizzes', 'trashedQuizzes', 'totalActiveQuizzes', 'totalUsers'));
     }
 
     public function create()
@@ -102,8 +105,10 @@ class QuizController extends Controller
             ['score' => $score]
         );
 
-        return redirect()->route('quiz.result', $quizId)->with('success', 'Jawaban berhasil dikirim!');
-        // return redirect()->route('student.dashboard')->with('success', "Jawaban berhasil dikirim! Skor kamu: $score");
+        return redirect()->route('quiz.result', $quizId)->with([
+            'banner' => 'Jawaban berhasil dikirim!',
+            'bannerStyle' => 'success'
+        ]);
     }
 
     public function edit(Quiz $quiz)

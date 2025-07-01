@@ -19,7 +19,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="overflow-hidden antialiased font-sans text-gray-900 bg-white">
+    <body class="antialiased font-sans text-gray-900 bg-white">
 
         <div class="min-h-screen bg-gradient-to-br from-indigo-100 to-white">
             @livewire('navigation-menu')
@@ -39,9 +39,8 @@
                 {{ $slot }}
             </main>
         </div>
-        <x-banner />
 
-        @stack('modals')
+        {{-- @stack('modals') --}}
 
         @livewireScripts
     </body>

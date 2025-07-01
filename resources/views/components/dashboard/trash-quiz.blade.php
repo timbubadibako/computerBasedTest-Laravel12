@@ -47,7 +47,7 @@
                         </a>
 
                         {{-- Restore --}}
-                        <form action="{{ route('quizzes.restore', $quiz->id ?? 0) }}"
+                        <form action="{{ route('admin.quizzes.restore', $quiz->id ?? 0) }}"
                             method="POST"
                             class="inline-block"
                             onsubmit="return confirm('Yakin ingin memulihkan quiz ini?')">
@@ -60,7 +60,7 @@
                         </form>
 
                         {{-- Permanently Delete --}}
-                        <form action="{{ route('quizzes.forceDelete', $quiz->id ?? 0) }}"
+                        <form action="{{ route('admin.quizzes.forceDelete', $quiz->id ?? 0) }}"
                             method="POST"
                             class="inline-block"
                             onsubmit="return confirm('Yakin ingin menghapus permanen?')">

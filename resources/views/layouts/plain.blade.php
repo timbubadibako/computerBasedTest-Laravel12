@@ -30,8 +30,8 @@
 
         {{-- Konten utama dari halaman lain akan muncul di sini, di atas background --}}
         <main class="relative z-10"> {{-- Bungkus yield dengan main tag dan z-10 --}}
-            @yield('content')
         </main>
+        @yield('content')
 
         {{-- 3. Tambahkan footer di sini --}}
         @stack('scripts')

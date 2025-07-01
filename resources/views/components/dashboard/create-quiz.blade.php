@@ -6,7 +6,7 @@
             <i data-lucide="plus" class="w-5 h-5 mr-2"></i>
             Buat Quiz Baru
         </h3>
-        <form id="createQuizForm" action="{{ route('quizzes.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <form id="createQuizForm" action="{{ route('admin.quizzes.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
             @csrf
             <div>
                 <label for="title" class="block mb-1 text-sm font-medium text-gray-700">Judul Quiz</label>

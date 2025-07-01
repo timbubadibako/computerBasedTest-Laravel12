@@ -21,8 +21,8 @@
                             <i data-lucide="users" class="w-6 h-6 text-green-600"></i>
                         </div>
                         <div class="ml-4">
-                            <p class="text-sm font-medium text-gray-600">Active Students</p>
-                            <p class="text-2xl font-bold text-gray-900">{{ $activeStudents ?? 0 }}</p>
+                            <p class="text-sm font-medium text-gray-600">Total Students</p>
+                            <p class="text-2xl font-bold text-gray-900">{{ $totalUsers ?? 0 }}</p>
                         </div>
                     </div>
                 </div>
